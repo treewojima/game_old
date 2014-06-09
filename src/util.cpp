@@ -11,6 +11,7 @@ using namespace std;
 
 const float PTM_RATIO = 1.f / 50.f;
 
+#ifdef USE_FORMAT
 string format(const string &format, ...)
 {
     va_list args;
@@ -22,6 +23,7 @@ string format(const string &format, ...)
     
     return string(buffer);
 }
+#endif
 
 string readFileContents(const char *filename)
 {

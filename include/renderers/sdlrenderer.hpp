@@ -7,10 +7,12 @@
 class SDLRenderer : public Renderer
 {
 public:
-    SDLRenderer();
+    SDLRenderer(int windowWidth, int windowHeight);
     //virtual ~SDLRenderer();
 
-    void blitTexture(Texture *texture, float x, float y);
+    virtual void blitTexture(Texture *texture, float x, float y) const;
+    virtual void clear() const;
+    virtual void present() const;
 
 private:
     SDL_Surface *_screen;

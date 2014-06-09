@@ -30,5 +30,5 @@ dumpvars:
 
 %.o: %.cpp
 	$(CC) -o $@ $(CFLAGS) $<
-	#$(CC) -o $@ $(CFLAGS) -MMD -MP -MF $(patsubst %.c, %.dep, $<) $<
+	@#$(CC) -o $@ $(CFLAGS) -MMD -MP -MF $(patsubst %.c, %.dep, $<) $<
 

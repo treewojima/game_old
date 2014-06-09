@@ -6,9 +6,6 @@
 #include "util.hpp"
 #include "vector.hpp"
 
-// Blit a texture to the screen
-void blitTexture(Texture *texture, float x, float y);
-
 // Create a blank surface, initialized to an RGBA color
 SDL_Surface *createBlankSurface(int width, int height, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
@@ -20,16 +17,10 @@ GLuint copySurfaceToGL(SDL_Surface *surface, bool optimize,
 void initShaders();
 void destroyShaders();
 
-// Overloaded blitting functions taking vectors instead of separate coordinates
-inline void blitTexture(Texture *texture, const Vector2f &pos)
-{
-    blitTexture(texture, pos.x, pos.y);
-}
-
-inline void blitTexture(Texture *texture, const Vector2i &pos)
-{
-    blitTexture(texture, pos.x, pos.y);
-}
+// Blitting functions
+void blitTexture(Texture *texture, float x, float y);
+void blitTexture(Texture *texture, const Vector2f &pos);
+void blitTexture(Texture *texture, const Vector2i &pos);
 
 // Platform-dependent colormasks
 namespace ColorMasks

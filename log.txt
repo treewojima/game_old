@@ -1,8 +1,4 @@
-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-[06/01/2014 23:38:24] Game started
-[06/01/2014 23:38:24] SDL 2.0.3 initialized
-[06/01/2014 23:38:24] GLEW 1.10.0 initialized
-[06/01/2014 23:38:24] warning: width of SDL_Surface (67) is not a power of two
-[06/01/2014 23:38:24] warning: height of SDL_Surface (80) is not a power of two
-[06/01/2014 23:38:26] Received quit event (escape was pressed)
-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZáÅ
+Logger started at 06/08/2014 20:49:57 (logging to log.txt)
+[06/08/2014 20:49:57] SDL 2.0.2 initialized
+[06/08/2014 20:49:59] Received quit event (escape was pressed)
+Logger stopped at 06/08/2014 20:49:59

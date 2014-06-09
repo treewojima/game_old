@@ -46,3 +46,8 @@ SOURCES += old/beastie.cpp \
     src/renderers/openglrenderer.cpp \
     src/renderers/sdlrenderer.cpp \
     src/renderer.cpp
+
+OTHER_FILES += \
+    Makefile \
+    res/shaders/vert.glsl \
+    res/shaders/frag.glsl

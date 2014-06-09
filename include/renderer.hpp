@@ -8,11 +8,15 @@
 class Renderer
 {
 public:
+    Renderer();
     virtual ~Renderer();
 
-    virtual void blitTexture(Texture *texture, float x, float y) = 0;
+    // These are basic graphics functions that every renderer must support
+    virtual void blitTexture(Texture *texture, float x, float y) const = 0;
+    virtual void clear() const = 0;
+    virtual void present() const = 0;
 
-    SDL_Window *getWindow() const;
+    inline SDL_Window *getWindow() const { return _window; }
 
 protected:
     void setWindow(SDL_Window *window);

@@ -7,13 +7,15 @@
 class OpenGLRenderer : public Renderer
 {
 public:
-    OpenGLRenderer();
+    OpenGLRenderer(int windowWidth, int windowHeight);
     virtual ~OpenGLRenderer();
 
-    void blitTexture(Texture *texture, float x, float y);
+    virtual void blitTexture(Texture *texture, float x, float y) const;
+    virtual void clear() const;
+    virtual void present() const;
 
 private:
-    SDL_GLContext *_glContext;
+    SDL_GLContext _glContext;
 };
 
 #endif

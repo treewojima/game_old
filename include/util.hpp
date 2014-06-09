@@ -7,7 +7,9 @@
 
 extern const float PTM_RATIO;
 
+#ifdef USE_FORMAT
 std::string format(const std::string &format, ...);
+#endif
 
 std::string readFileContents(const char *filename);
 

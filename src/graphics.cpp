@@ -9,6 +9,7 @@
 
 #include "defines.hpp"
 #include "exception.hpp"
+#include "game.hpp"
 #include "logger.hpp"
 #include "util.hpp"
 
@@ -33,33 +34,17 @@ namespace ColorMasks
 
 void blitTexture(Texture *texture, float x, float y)
 {
-    const float width = texture->getWidth();
-    const float height = texture->getHeight();
-    const float centeredWidth = width / 2.f;
-    const float centeredHeight = height / 2.f;
+    getGame().getCurrentState().getRenderer().blitTexture(texture, x, y);
+}
 
-    glBindTexture(GL_TEXTURE_2D, texture->getTexture());
-    //glTranslatef(x, y, 0);
-    glTranslatef(x - centeredWidth, y - centeredHeight, 0);
-    glBegin(GL_QUADS);
-        glTexCoord2i(1, 1);
-        //glVertex2f(centeredWidth, -centeredHeight);
-        glVertex2f(width, 0);
+void blitTexture(Texture *texture, const Vector2f &pos)
+{
+    getGame().getCurrentState().getRenderer().blitTexture(texture, pos.x, pos.y);
+}
 
-        glTexCoord2i(0, 1);
-        //glVertex2f(-centeredWidth, -centeredHeight);
-        glVertex2f(0, 0);
-
-        glTexCoord2i(0, 0);
-        //glVertex2f(-centeredWidth, centeredHeight);
-        glVertex2f(0, height);
-
-        glTexCoord2i(1, 0);
-        //glVertex2f(centeredWidth, centeredHeight);
-        glVertex2f(width, height);
-    glEnd();
-
-    glLoadIdentity();
+void blitTexture(Texture *texture, const Vector2i &pos)
+{
+    getGame().getCurrentState().getRenderer().blitTexture(texture, pos.x, pos.y);
 }
 
 SDL_Surface *createBlankSurface(int width, int height, Uint8 r, Uint8 g, Uint8 b, Uint8 a)

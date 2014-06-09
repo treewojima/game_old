@@ -17,7 +17,11 @@ Sprite::Sprite(const string &name, Texture *texture) :
     //_body(NULL)
 {
     if (!texture)
-        throw Exception(format("NULL texture passed to sprite %s", toString().c_str()));
+    {
+        ostringstream ss;
+        ss << "NULL texture passed to sprite " << toString();
+        throw Exception(ss.str());
+    }
 }
 
 Sprite::Sprite(const string &name) :

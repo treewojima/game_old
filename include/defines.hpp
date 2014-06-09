@@ -7,4 +7,7 @@
 
 #define _DEBUG
 
+// Use this to include/exclude the format() function
+//#define USE_FORMAT
+
 #endif
