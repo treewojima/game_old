@@ -17,14 +17,8 @@ $(TARGET): $(OBJECTS)
 	$(CC) -o $(TARGET) $(LFLAGS) $^
 
 clean:
-	@rm -f $(TARGET) $(OBJECTS) $(DEPFILES)
-	@find . -type f -iname "*~" -exec rm -f {} \;
-
-dumpvars:
-	@echo -e "*** Sources:\n" $(SOURCES)
-	@echo -e "\n*** Headers:\n" $(HEADERS)
-	@echo -e "\n*** Depfiles:\n" $(DEPFILES)
-	@echo -e "\n*** Objects:\n" $(OBJECTS)
+	rm -f $(TARGET) $(OBJECTS) $(DEPFILES)
+	find . -type f -iname "*~" -exec rm -f {} \;
 
 -include $(DEPFILES)
 
